@@ -45,7 +45,7 @@
 
 ### 2. [GitHub](https://github.com/NIFTYCloud-mbaas/AndroidSegmentUserApp)からサンプルプロジェクトのダウンロード
 
-* 下記リンクをクリックしてプロジェクトをダウンロードをローカルにダウンロードします
+* 下記リンクをクリックしてプロジェクトをローカルにダウンロードします
 
  * __[AndroidSegmentUserApp](https://github.com/NIFTYCloud-mbaas/AndroidSegmentUserApp/archive/master.zip)__
 
@@ -70,7 +70,7 @@
 
 * Android Studioから、適当なSimulatorを選択します
 * アプリが起動したら、Login画面が表示されます
-* 初回は__`No account yet? Create one`__ リンクをクリックして、会員登録を行います
+* 初回は__`No account yet? Create one`__ リンクをクリックして、新規会員登録を行います
 
 ![画像13](/readme-img/008.png)
 
@@ -88,7 +88,7 @@
 
 ![画像15](/readme-img/010.png)
 
-* 更新後、tableViewが自動でリロードされ、追加・更新が行われていることがわかります。追加したフィールドは後から編集することが可能です
+* 更新後、リストビューが自動でリロードされ、追加・更新が行われていることがわかります。追加したフィールドは後から編集することが可能です
 
 ![画像16](/readme-img/011.png)
 
