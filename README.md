@@ -4,7 +4,7 @@
 ![画像01](/readme-img/001.png)
 
 ## 概要
-* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の『会員管理機能』を利用してObjective-Cアプリにログイン機能を実装し、ユーザー情報を更新するサンプルプロジェクトです
+* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の『会員管理機能』を利用してAndroidアプリにログイン機能を実装し、ユーザー情報を更新するサンプルプロジェクトです
 * 簡単な操作ですぐに [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の機能を体験いただけます★☆
 
 ## ニフティクラウドmobile backendって何？？
@@ -35,7 +35,7 @@
 ![画像03](/readme-img/003.png)
 
 * アプリ作成されると下図のような画面になります
-* この２種類のAPIキー（アプリケーションキーとクライアントキー）はXcodeで作成するiOSアプリに[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)を紐付けるために使用します
+* この２種類のAPIキー（アプリケーションキーとクライアントキー）はAndroidアプリに[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)を紐付けるために使用します
 
 ![画像04](/readme-img/004.png)
 
@@ -43,15 +43,15 @@
 
 ![画像05](/readme-img/005.png)
 
-### 2. [GitHub](https://github.com/ncmbadmin/AndroidSegmentUserApp)からサンプルプロジェクトのダウンロード
+### 2. [GitHub](https://github.com/NIFTYCloud-mbaas/AndroidSegmentUserApp)からサンプルプロジェクトのダウンロード
 
-* 下記リンクをクリックしてプロジェクトをダウンロードをMacにダウンロードします
+* 下記リンクをクリックしてプロジェクトをダウンロードをローカルにダウンロードします
 
- * __[AndroidSegmentUserApp](https://github.com/ncmbadmin/AndroidSegmentUserApp/archive/master.zip)__
+ * __[AndroidSegmentUserApp](https://github.com/NIFTYCloud-mbaas/AndroidSegmentUserApp/archive/master.zip)__
 
 ### 3. AndroidStudioでアプリを起動
 
-* AndroidStudioを開き「Open File or Project」からダウンロードしたプロジェクトのフォルダ(AndroidSegmentUserApp)を選択します。
+* AndroidStudioを開き「Open File or Project」からダウンロードしたプロジェクトのフォルダ(AndroidSegmentUserApp)を選択します
 
 ![画像06](/readme-img/006.png)
 
@@ -80,8 +80,7 @@
 
 ![画像14](/readme-img/009.png)
 
-* ログインに失敗した場合は画面にエラーコードが表示されます
-* エラーが発生した場合は、[こちら](http://mb.cloud.nifty.com/doc/current/rest/common/error.html)よりエラー内容を確認いただけます
+* ログインに失敗した場合はアラートでログイン失敗を表示します
 
 #### 新しいフィールドの追加
 * 新しいフィールドの追加をしてみましょう。"favorite"というフィールドを作り、中身には"music"と入れてみました。こうすることで、ユーザー情報に新しい属性を付与することができるようになります！
