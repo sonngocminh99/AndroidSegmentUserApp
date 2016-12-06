@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.nifty.cloud.mb.core.NCMBObject;
-
-import org.json.JSONException;
 
 /**
  * Customer List view
@@ -35,7 +32,7 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mUserObject.allKeys().length();
+        return mUserObject.allKeys().size();
     }
 
     @Override
@@ -81,33 +78,26 @@ public class CustomAdapter extends BaseAdapter {
         //Viewにセットする
         vi.setTag( holder );
 
+        String keyName = (String)mUserObject.allKeys().get(position).toString().trim();
+        Object valName = (Object)mUserObject.getString(keyName);
 
-        try{
-            String keyName = (String)mUserObject.allKeys().get(position).toString().trim();
-            Object valName = (Object)mUserObject.getString(keyName);
-
-            holder.item_key.setText( keyName ); //keyの値
-            holder.item_value.setText( valName.toString() ); //valueの値
+        holder.item_key.setText( keyName ); //keyの値
+        holder.item_value.setText( valName.toString() ); //valueの値
 
 
-            //更新可項目を別途Layout設定
-            if(Constant.ignoreKeys.contains(keyName)){
-                //valueの値を更新不可にする
-                holder.item_value.setBackgroundColor(Color.BLACK);
-                holder.item_value.setTextColor(Color.WHITE);
-                holder.item_value.setEnabled(false);
-            }else{
-                //valueの値を更新可能にする
-                holder.item_value.setEnabled(true);
-                holder.item_value.setBackgroundColor(Color.WHITE);
-                holder.item_value.setTextColor(Color.BLACK);
-                //valueの値を更新後の処理する
-                holder.item_value.addTextChangedListener( new TextWatcherCustom(keyName, (EditText)holder.item_value , position));
-            }
-
-        } catch (JSONException errJson) {
-            //エラー処理
-            Log.d("jsonError", errJson.getMessage());
+        //更新可項目を別途Layout設定
+        if(Constant.ignoreKeys.contains(keyName)){
+            //valueの値を更新不可にする
+            holder.item_value.setBackgroundColor(Color.BLACK);
+            holder.item_value.setTextColor(Color.WHITE);
+            holder.item_value.setEnabled(false);
+        }else{
+            //valueの値を更新可能にする
+            holder.item_value.setEnabled(true);
+            holder.item_value.setBackgroundColor(Color.WHITE);
+            holder.item_value.setTextColor(Color.BLACK);
+            //valueの値を更新後の処理する
+            holder.item_value.addTextChangedListener( new TextWatcherCustom(keyName, (EditText)holder.item_value , position));
         }
 
         return vi;
