@@ -68,6 +68,9 @@
  * Windowsの場合、Ctrl + Sで保存できます。
  * Macの場合、command + Sで保存できます。
 
+* AndroidStudioからビルドする。
+ * 「プロジェクト場所」\app\build\outputs\apk\ ***.apk ファイルが生成される
+
 ### 5.動作確認
 
 * Android Studioから、適当なSimulatorを選択します
