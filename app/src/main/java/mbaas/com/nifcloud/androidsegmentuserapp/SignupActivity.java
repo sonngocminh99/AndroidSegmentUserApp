@@ -1,4 +1,4 @@
-package mbaas.com.nifty.androidsegmentuserapp;
+package mbaas.com.nifcloud.androidsegmentuserapp;
 
 
 import android.app.ProgressDialog;
@@ -11,12 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nifty.cloud.mb.core.DoneCallback;
-import com.nifty.cloud.mb.core.NCMBException;
-import com.nifty.cloud.mb.core.NCMBUser;
+import com.nifcloud.mbaas.core.DoneCallback;
+import com.nifcloud.mbaas.core.NCMBException;
+import com.nifcloud.mbaas.core.NCMBUser;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Bind;
 
 /**
  * 新規ユーザー登録
@@ -24,10 +24,10 @@ import butterknife.Bind;
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
-    @Bind(R.id.input_name) EditText _nameText;
-    @Bind(R.id.input_password) EditText _passwordText;
-    @Bind(R.id.btn_signup) Button _signupButton;
-    @Bind(R.id.link_login) TextView _loginLink;
+    @BindView(R.id.input_name) EditText _nameText;
+    @BindView(R.id.input_password) EditText _passwordText;
+    @BindView(R.id.btn_signup) Button _signupButton;
+    @BindView(R.id.link_login) TextView _loginLink;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
