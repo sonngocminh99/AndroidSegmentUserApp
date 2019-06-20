@@ -15,9 +15,9 @@
 
 ## 動作環境
 * Windows 7 Professional
-* Android Studio 3.1
+* Android Studio 3.4.1
 * Android ver 4x以上
-* Android SDK v3
+* Android SDK v3.0.2
   - SDK v2系だと動作しないので注意
 
 ※上記内容で動作確認をしています
@@ -46,14 +46,14 @@
 * 下記リンクをクリックしてプロジェクトをダウンロードします
  * https://github.com/NIFCloud-mbaas/AndroidSegmentUserApp/archive/master.zip
 * ダウンロードしたプロジェクトを解凍します
-* AndroidStudio を開きます、「Open an existing Android Studio projct」をクリックして解凍したプロジェクトを選択します
+* AndroidStudio を開きます、「Open an existing Android Studio project」をクリックして解凍したプロジェクトを選択します
 * プロジェクトが開かれます
 
 ![画像06](/readme-img/006.png)
 
 ### 3. SDKの導入（実装済み）
 
-※このサンプルアプリには既にSDKが実装済み（下記手順）となっています。（ver.3.0.0)<br>　最新版をご利用の場合は入れ替えてご利用ください。
+※このサンプルアプリには既にSDKが実装済み（下記手順）となっています。（ver.3.0.2)<br>　最新版をご利用の場合は入れ替えてご利用ください。
 
 * SDKダウンロード
 SDKはここ（[SDK リリースページ](https://github.com/NIFCloud-mbaas/ncmb_android/releases)）から取得してください.
@@ -64,8 +64,8 @@ SDKはここ（[SDK リリースページ](https://github.com/NIFCloud-mbaas/ncm
   - app/build.gradleファイルに以下を追加します
 ```gradle
 dependencies {
-    compile 'com.google.code.gson:gson:2.3.1'
-    compile files('libs/NCMB.jar')
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation files('libs/NCMB.jar')
 }
 ```
   - androidManifestの設定
@@ -193,6 +193,6 @@ userInfo.fetchInBackground(new FetchCallback<NCMBObject>() {
 データ保存・データ検索・会員管理・プッシュ通知などの機能を実装したい場合には、以下のドキュメント（for Java）もご参照ください。
 
 * [ドキュメント](https://mbaas.nifcloud.com/doc/current/)
-* [ドキュメント・データストア](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_android.html)
-* [ドキュメント・会員管理](https://mbaas.nifcloud.com/doc/current/user/basic_usage_android.html)
-* [ドキュメント・プッシュ通知](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)
+  * [ドキュメント・データストア](https://mbaas.nifcloud.com/doc/current/datastore/basic_usage_android.html)
+  * [ドキュメント・会員管理](https://mbaas.nifcloud.com/doc/current/user/basic_usage_android.html)
+  * [ドキュメント・プッシュ通知](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)

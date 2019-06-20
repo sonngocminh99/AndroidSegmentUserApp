@@ -84,6 +84,7 @@ public class SignupActivity extends AppCompatActivity {
                 if (e != null) {
                     //会員登録時にエラーが発生した場合の処理
                     onSignupFailed();
+                    progressDialog.dismiss();
                 } else {
                     new android.os.Handler().postDelayed(
                             new Runnable() {
