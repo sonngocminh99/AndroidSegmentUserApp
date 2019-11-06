@@ -14,11 +14,10 @@
 ![画像02](/readme-img/002.png)
 
 ## 動作環境
-* Windows 7 Professional
-* Android Studio 3.4.1
-* Android ver 4x以上
-* Android SDK v3.0.2
-  - SDK v2系だと動作しないので注意
+* MacOS Mojave v10.14.6 (18G103)
+* Android studio: 3.4.1
+* Simulator: Pixel 2 Android OS Version 10
+* Unity 2019.1.14f1
 
 ※上記内容で動作確認をしています
 
