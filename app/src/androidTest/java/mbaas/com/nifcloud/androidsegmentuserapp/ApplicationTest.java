@@ -1,4 +1,4 @@
-package mbaas.com.nifty.androidsegmentuserapp;
+package mbaas.com.nifcloud.androidsegmentuserapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package mbaas.com.nifty.androidsegmentuserapp;
+package mbaas.com.nifcloud.androidsegmentuserapp;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -12,12 +12,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.nifty.cloud.mb.core.DoneCallback;
-import com.nifty.cloud.mb.core.FetchCallback;
-import com.nifty.cloud.mb.core.NCMB;
-import com.nifty.cloud.mb.core.NCMBException;
-import com.nifty.cloud.mb.core.NCMBObject;
-import com.nifty.cloud.mb.core.NCMBUser;
+import com.nifcloud.mbaas.core.DoneCallback;
+import com.nifcloud.mbaas.core.FetchCallback;
+import com.nifcloud.mbaas.core.NCMB;
+import com.nifcloud.mbaas.core.NCMBException;
+import com.nifcloud.mbaas.core.NCMBObject;
+import com.nifcloud.mbaas.core.NCMBUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -174,7 +174,11 @@ public class MainActivity extends AppCompatActivity {
                 //更新対象ではない
             }else{
                 //更新データを設定
-                customAdapter.getUserObject().put(newKey.trim(), newValue.trim());
+                try {
+                    customAdapter.getUserObject().put(newKey.trim(), newValue.trim());
+                } catch (NCMBException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
