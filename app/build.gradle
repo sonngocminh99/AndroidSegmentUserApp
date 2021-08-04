@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+/*
 apply plugin: 'devicefarm'
 
 
@@ -13,6 +14,7 @@ devicefarm {
     }
     instrumentation { }
 }
+*/
 
 android {
     compileSdkVersion 30
