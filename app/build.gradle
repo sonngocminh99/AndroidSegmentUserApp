@@ -1,12 +1,27 @@
 apply plugin: 'com.android.application'
 
+/*
+apply plugin: 'devicefarm'
+def envAccessKey = ENV_ACCESS_KEY
+def envSecretKey = ENV_SECRET_KEY
+devicefarm {
+    projectName "test_android"
+    devicePool "android"
+    authentication {
+        accessKey envAccessKey
+        secretKey envSecretKey
+    }
+    instrumentation { }
+}
+*/
+
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
     defaultConfig {
-        applicationId "mbaas.com.nifcloud.androidsegmentuserapp"
-        minSdkVersion 16
-        targetSdkVersion 28
+        applicationId "ncmbdataquick.mbaas.com.nifcloud.datastorequickstart"
+        minSdkVersion 15
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -17,35 +32,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
-    }
-    testOptions {
-        animationsDisabled = true
-    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-
-    // Core library
-    androidTestImplementation 'androidx.test:core:1.2.0'
-
-    // AndroidJUnitRunner and JUnit Rules
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test:rules:1.2.0'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-
-    // Espresso dependencies
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'com.jakewharton:butterknife:10.2.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-    implementation 'com.google.code.gson:gson:2.8.6'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation files('libs/NCMB.jar')
 }
+
