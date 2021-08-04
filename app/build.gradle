@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
-
-/*
 apply plugin: 'devicefarm'
+
+
 def envAccessKey = ENV_ACCESS_KEY
 def envSecretKey = ENV_SECRET_KEY
 devicefarm {
-    projectName "test_android"
+    projectName "My Project" 
     devicePool "android"
     authentication {
         accessKey envAccessKey
@@ -13,7 +13,6 @@ devicefarm {
     }
     instrumentation { }
 }
-*/
 
 android {
     compileSdkVersion 30
