@@ -2,7 +2,9 @@
 
 buildscript {
     repositories {
-        maven()
+        maven {
+            url "https://repository-achartengine.forge.cloudbees.com/snapshot/"
+        } 
         gradlePluginPortal()
 	google()
     }
