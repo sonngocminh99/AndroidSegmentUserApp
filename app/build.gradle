@@ -1,7 +1,9 @@
 apply plugin: 'com.android.application'
+
 /*
 apply plugin: 'devicefarm'
-
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 def envAccessKey = ENV_ACCESS_KEY
 def envSecretKey = ENV_SECRET_KEY
@@ -14,7 +16,9 @@ devicefarm {
     }
     instrumentation { }
 }
+
 */
+
 
 android {
     compileSdkVersion 30
@@ -34,6 +38,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    // Butterknife requires Java 8.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -44,5 +53,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation files('libs/NCMB.jar')
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 }
 
