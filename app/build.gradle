@@ -1,28 +1,10 @@
 apply plugin: 'com.android.application'
 
-/*
-apply plugin: 'devicefarm'
-
-def envAccessKey = ENV_ACCESS_KEY
-def envSecretKey = ENV_SECRET_KEY
-devicefarm {
-    projectName "My Project"
-    devicePool "android"
-    authentication {
-        accessKey envAccessKey
-        secretKey envSecretKey
-    }
-    instrumentation { }
-}
-
-*/
-
-
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "ncmbdataquick.mbaas.com.nifcloud.datastorequickstart"
+        applicationId "mbaas.com.nifcloud.androidsegmentuserapp"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
@@ -31,8 +13,8 @@ android {
     }
     buildTypes {
         release {
-         minifyEnabled false
-         proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -42,9 +24,6 @@ android {
     testOptions {
         animationsDisabled = true
     }
-
-
-    buildToolsVersion '28.0.3'
 }
 
 dependencies {
@@ -70,4 +49,3 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation files('libs/NCMB.jar')
 }
-
