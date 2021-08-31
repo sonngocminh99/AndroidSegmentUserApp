@@ -1,9 +1,13 @@
 package mbaas.com.nifcloud.androidsegmentuserapp;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
+
+import com.nifcloud.mbaas.core.NCMBException;
+import com.nifcloud.mbaas.core.NCMBUser;
 
 import org.hamcrest.Matcher;
 
@@ -31,5 +35,34 @@ public class Utils {
                 uiController.loopMainThreadForAtLeast(millis);
             }
         };
+    }
+
+    public static void createUserIfNotExist(String userName, String pass) throws NCMBException {
+        NCMBUser.loginInBackground(userName, pass, (ncmbUser, e) -> {
+            if (ncmbUser == null) {
+                NCMBUser user = new NCMBUser();
+                user.setUserName(userName);
+                user.setPassword(pass);
+                user.saveInBackground(e1 -> {
+                    if (e1 != null) {
+                        Log.d("NCMB", e1.getMessage());
+                    }
+                });
+            }
+        });
+    }
+
+    public static void deleteUserIfNotExist(String userName, String pass) throws NCMBException {
+
+        NCMBUser.loginInBackground(userName, pass, (ncmbUser, e) -> {
+            if (e == null) {
+                ncmbUser.deleteObjectInBackground(e1 -> {
+                    if (e1 != null) {
+                        Log.d("NCMB", e1.getMessage());
+                    }
+                });
+            }
+        });
+
     }
 }

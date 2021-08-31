@@ -5,6 +5,8 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
+import com.nifcloud.mbaas.core.NCMBException;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -43,6 +45,8 @@ public class LoginUITest {
         edtPass = onView(withId(R.id.input_password));
         btnLogin = onView(withId(R.id.btn_login));
         tvLinkSignup = onView(withId(R.id.link_signup));
+
+
     }
 
     @Test
@@ -93,8 +97,12 @@ public class LoginUITest {
     }
 
     @Test
-    public void doLogin() {
-        edtName.perform(typeText("Hoge"));
+    public void doLogin() throws NCMBException {
+        // Create user before login
+        Utils.createUserIfNotExist("hoge", "123456");
+        onView(isRoot()).perform(waitFor(3000));
+        // Execute Login
+        edtName.perform(typeText("hoge"));
         edtPass.perform(typeText("123456"), closeSoftKeyboard());
         btnLogin.perform(scrollTo()).perform(click());
         onView(isRoot()).perform(waitFor(5000));

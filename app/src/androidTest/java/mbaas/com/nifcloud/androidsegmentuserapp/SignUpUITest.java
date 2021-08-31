@@ -5,6 +5,8 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
+import com.nifcloud.mbaas.core.NCMBException;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -103,10 +105,14 @@ public class SignUpUITest {
     }
 
     @Test
-    public void doLogin() {
-        edtName.perform(typeText("AndrewNg"));
+    public void doSignup() throws NCMBException {
+        // Delete user if it exits before signup
+        Utils.deleteUserIfNotExist("hoge", "123456");
+        onView(isRoot()).perform(waitFor(3000));
+        // Execute signup
+        edtName.perform(typeText("hoge"));
         edtPass.perform(typeText("123456"), closeSoftKeyboard());
-        btnSignup.perform(click());
+        btnSignup.perform(scrollTo()).perform(click());
         onView(isRoot()).perform(waitFor(5000));
         onView(withText("ログインに成功しました。")).check(matches(isDisplayed()));
     }
