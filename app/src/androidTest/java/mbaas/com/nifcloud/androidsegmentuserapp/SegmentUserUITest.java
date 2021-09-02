@@ -5,6 +5,8 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
+import com.nifcloud.mbaas.core.NCMBException;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,7 +18,6 @@ import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -48,7 +49,15 @@ public class SegmentUserUITest {
         edtNewValue = onView(withId(R.id.txtNewValue));
         btnUpdate = onView(withId(R.id.btnUpdate));
 
-        edtName.perform(typeText("AndrewNg"));
+        // Create user before login
+        try {
+            Utils.createUserIfNotExist("hoge", "123456");
+        } catch (NCMBException e) {
+            e.printStackTrace();
+        }
+        onView(isRoot()).perform(waitFor(3000));
+
+        edtName.perform(typeText("hoge"));
         edtPass.perform(typeText("123456"), closeSoftKeyboard());
         btnLogin.perform(scrollTo()).perform(click());
         onView(isRoot()).perform(waitFor(5000));
