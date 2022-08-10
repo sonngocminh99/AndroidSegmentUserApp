@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidSegmentUserApp.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidSegmentUserApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidSegmentUserApp.app.unitTest.iml" />
     </modules>
   </component>
 </project>
